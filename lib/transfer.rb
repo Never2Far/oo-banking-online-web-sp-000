@@ -11,7 +11,7 @@ def initialize(sender, receiver, amount)
 end
 
 def valid?
-if @sender.valid? && @receiver.valid? && (@sender.balance >= @amount)
+if @sender.valid? && @receiver.valid? && (@sender.balance >= @amount) && (@status == "pending")
   return true
 else
   return false
@@ -22,7 +22,7 @@ def execute_transaction
   if self.valid?
     @sender.deposit(@amount * -1)
     @receiver.deposit(@amount)
-    @status = "executed"
+    @status = "complete"
   else
     @status = "rejected"
   end
