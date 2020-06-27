@@ -15,7 +15,7 @@ def deposit(money)
 end
 
 def display_balance
-  return @balance
+  return "Your balance is $#{@balance}."
 end
 
 def valid?
