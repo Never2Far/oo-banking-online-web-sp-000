@@ -25,6 +25,7 @@ def execute_transaction
     @status = "executed"
   else
     @status = "rejected"
+  end
 end
 
 end
